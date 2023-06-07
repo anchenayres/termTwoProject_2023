@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, TextInput, View, Image, Alert, Button, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 const LoginScreen = ({ navigation }) => {
@@ -29,8 +30,9 @@ const LoginScreen = ({ navigation }) => {
     return (
 
         //{{uri: ""}} if you want to add a url link
+        <SafeAreaView>
         <View style={styles.container}> 
-            <Image style={styles.logo} source={require("../assets/logo/logo.png")} />
+            <Image style={styles.logo} source={require("../assets/modelLogo.png")} />
             <Text style={styles.heading}>Login</Text>
 
             <Text style={styles.inputLabel}>Email</Text>
@@ -62,6 +64,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
     ):  <ActivityIndicator animating={loading} size={40} />}
         </View>
+        </SafeAreaView>
     )
 }
 
@@ -72,8 +75,8 @@ const styles = StyleSheet.create({
         padding: 20
     },
     logo:{
-        height: 80,
-        width: 80,
+        height: 200,
+        width: 200,
         alignSelf: 'center',
         marginBottom: 20,
         resizeMode: 'contain'

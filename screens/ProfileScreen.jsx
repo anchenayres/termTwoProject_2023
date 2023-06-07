@@ -36,7 +36,7 @@ const ProfileScreen = () => {
 
         //{{uri: ""}} if you want to add a url link
         <View style={styles.container} > 
-            <Image style={styles.logo} source={require("../assets/logo/logo.png")} />
+            <Image style={styles.logo} source={require("../assets/modelLogo.png")} />
             <Text style={styles.heading}>Set up your Profile</Text>
 
         <Text style={styles.appearHeading}>Appearance</Text>
@@ -112,16 +112,17 @@ const styles = StyleSheet.create({
         height: 20,
     },
     logo:{
-        height: 80,
-        width: 80,
+        height: 200,
+        width: 200,
         alignSelf: 'center',
-        marginBottom: 20,
-        resizeMode: 'contain'
+        resizeMode: 'contain',
+
     },
     heading: {
         fontSize: 21,
         textAlign: 'center',
         marginBottom: 20,
+        marginTop: -80,
     },
     appearHeading:{
         marginBottom: 20,

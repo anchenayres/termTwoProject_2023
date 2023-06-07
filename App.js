@@ -18,32 +18,40 @@ export default function App() {
   //TODO: setup navigation here
   //TODO: check if user is logged in
 
+  const loggedIn = true
+
   return (
 
-    //Route for navigation
+    // Route for navigation
+
     // <NavigationContainer>
-    //   <SafeAreaView>
-    //     <Stack.Navigator initialRouteName='Login'>
-    //       <Stack.Screen name='Login' component={LoginScreen} />
-    //       <Stack.Screen name='Register' component={RegisterSceen} />
+    //     <Stack.Navigator initialRouteName='Login' >
+    //       {!loggedIn ?(
+    //       <>
+    //         <Stack.Screen name='Login' component={LoginScreen} />
+    //         <Stack.Screen name='Register' component={RegisterSceen} />
+    //       </>
+    //       ): (
+    //         <Stack.Screen name='Competitions' component={CompetitionScreen} />
+    //       )}
     //     </Stack.Navigator>
-    //   </SafeAreaView>
     // </NavigationContainer>
 
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="LoginScreen" component={LoginScreen}>
+      <Drawer.Navigator initialRouteName="LoginScreen" >
         <Drawer.Screen name='Profile' component={ProfileScreen}/>
-        <Drawer.Screen name='Project' component={ProjectScreen}/>
+        <Drawer.Screen name='Login' component={LoginScreen}/>
         <Drawer.Screen name='Competitions' component={CompetitionScreen}/>
-
       </Drawer.Navigator>
     </NavigationContainer>
 
-    // <SafeAreaView>
-      // {/* <StatusBar />
-      // <ProfileScreen /> */}
-      // <LoginScreen/>
-    // </SafeAreaView>
+    // <NavigationContainer>
+    //   <Stack.Navigator initialRouteName='Login'>
+    //     <Stack.Screen name="Login" component={LoginScreen} />
+    //     <Stack.Screen name="Register" component={RegisterSceen} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+
   );
 }
 
