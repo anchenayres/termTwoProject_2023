@@ -9,8 +9,14 @@ const ProjectCard = (props) => {
   return (
     <TouchableOpacity style={styles.card} >
         <View>
-            <Text style={styles.title}>{data.title}</Text>
-            <Text style={styles.description}>{data.creator} - {data.year}</Text>
+            <Text style={styles.title}>{data.title} </Text>
+            <Text style={styles.description}>{data.creator} {data.year} | Entries Close: {data.endDate}</Text>
+            <Text style={styles.descr}>{data.descr}</Text>
+
+            <TouchableOpacity style={styles.submitButton}>
+                <Text style={styles.submitButtonText}>Enter Competition</Text>
+            </TouchableOpacity>
+
 
         <View style={styles.techBox}>
             {data.tech.map((technology, index) => {
@@ -19,8 +25,10 @@ const ProjectCard = (props) => {
                     </View>
             })}
             </View>
+
+
         </View>
-        <Ionicons name="chevron-forward-outline" size={21} color='white' />
+        {/* <Ionicons name="chevron-forward-outline" size={21} color='white' /> */}
     </TouchableOpacity>
   )
 }
@@ -31,20 +39,36 @@ const styles = StyleSheet.create({
     card: {
         padding: 15,
         marginBottom: 20,
-        backgroundColor: 'black',
+        backgroundColor: 'white',
         borderRadius: 5,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    title: {
+    submitButton:{
+        marginTop: 10,
+        backgroundColor: 'pink',
+        width: 150,
+        height: 30,
+        borderRadius: 10,
+    },
+    submitButtonText:{
+        textAlign: 'center',
+        padding: 5,
         color: 'white',
+    },
+    title: {
+        color: 'black',
+        fontWeight: 'bold',
         fontSize: 20,
         marginBottom: 5,
     },
     description: {
-        color: 'white',
+        color: 'red',
         marginBottom: 10,
+    },
+    descr:{
+        color: 'black',
     },
     badge: {
         color: 'black',
@@ -57,7 +81,8 @@ const styles = StyleSheet.create({
     },
     techBox:{
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        color: 'red'
 
     }
 })

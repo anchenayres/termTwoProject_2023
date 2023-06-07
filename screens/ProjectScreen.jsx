@@ -11,16 +11,6 @@ const ProjectScreen = () => {
         {title: 'project 1', year: 2023, creator: 'Anchen', tech: ['React Native', 'Firebase']},
         {title: 'project 2', year: 2023, creator: 'Anchen', tech: ['React Native', 'Firebase']},
         {title: 'project 3', year: 2023, creator: 'Anchen', tech: ['React Native', 'Firebase']},
-        {title: 'project 4', year: 2022, creator: 'Anchen', tech: ['React Native', 'Firebase']},
-        {title: 'project 5', year: 2022, creator: 'Anchen', tech: ['React Native', 'Firebase']},
-        {title: 'project 6', year: 2022, creator: 'Anchen', tech: ['React Native', 'Firebase']},
-        {title: 'project 7', year: 2020, creator: 'Anchen', tech: ['React Native', 'Firebase']},
-        {title: 'project 8', year: 2020, creator: 'Anchen', tech: ['React Native', 'Firebase']},
-        {title: 'project 9', year: 2020, creator: 'Anchen', tech: ['React Native', 'Firebase']},
-        {title: 'project 10', year: 2020, creator: 'Anchen', tech: ['React Native', 'Firebase']},
-
-
-
     ]
 
   return (

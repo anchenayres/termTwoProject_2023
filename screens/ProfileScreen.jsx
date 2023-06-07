@@ -1,15 +1,25 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, TextInput, View, Image, Alert, Button, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { SelectList } from 'react-native-dropdown-select-list'
+import { MultipleSelectList } from 'react-native-dropdown-select-list'
+import ProjectScreen from "./ProjectScreen";
 
 const ProfileScreen = () => {
 
-    const [selected, setSelected] = useState('')
+    const [selected, setSelected] = useState('');
 
     const data = () => [
         {key: '1', value: 'Female'},
         {key: '2', value: 'Male'},
         {key: '3', value: 'Other'}
+    ]
+
+    const categories = () => [
+        {key: '1', value: 'Runway'},
+        {key: '2', value: 'Swimsuit'},
+        {key: '3', value: 'Lingerie'},
+        {key: '4', value: 'Editorial'}
+
     ]
     
     const logIn = () => {
@@ -25,17 +35,19 @@ const ProfileScreen = () => {
     return (
 
         //{{uri: ""}} if you want to add a url link
-        <View style={styles.container}> 
+        <View style={styles.container} > 
             <Image style={styles.logo} source={require("../assets/logo/logo.png")} />
             <Text style={styles.heading}>Set up your Profile</Text>
 
         <Text style={styles.appearHeading}>Appearance</Text>
 
             <SelectList style={styles.genderList}
-                setSelectd={(val)=> setSelected(val)}
+            boxStyles={{borderRadius:10}} 
+                setSelected={(val)=> setSelected(val)}
                 placeholder="Select Gender"
                 data={data}
                 save="value"
+                
                 />
 
             <TextInput style={styles.one} 
@@ -49,25 +61,37 @@ const ProfileScreen = () => {
             placeholder='Eye Colour'
             />
             <TextInput style={styles.four} 
-            placeholder='Height'
+            placeholder='Height (cm)'
+            />
+            <TextInput style={styles.five} 
+            placeholder='Bust (cm)'
+            />
+            <TextInput style={styles.six} 
+            placeholder='Waist (cm)'
             />
 
         <Text style={styles.genHeading}>General</Text>
 
             <TextInput style={styles.five} 
-                placeholder='Occupation'
+                placeholder='Current Agency'
             />
                 <TextInput style={styles.six} 
-                placeholder='Location'
+                placeholder='Languages'
             />
-            <TextInput style={styles.seven} 
-                placeholder='Bio'
+
+        <Text style={styles.genHeading}>Categories</Text>
+
+            <MultipleSelectList 
+                setSelected={(val) => setSelected(val)} 
+                data={categories} 
+                save="value"
+                label="Categories"
             />
 
 
         <View>
             <TouchableOpacity style={styles.submitButton}>
-                <Text style={styles.submitButtonText}>Done</Text>
+                <Text style={styles.submitButtonText} onPress={ProjectScreen}>Done</Text>
             </TouchableOpacity>
 
         <Button title='Need an account?' color={'black'} />
@@ -83,6 +107,10 @@ const styles = StyleSheet.create({
     container: {
         padding: 20
     },
+    SelectList:{
+        width: 20,
+        height: 20,
+    },
     logo:{
         height: 80,
         width: 80,
@@ -93,7 +121,7 @@ const styles = StyleSheet.create({
     heading: {
         fontSize: 21,
         textAlign: 'center',
-        marginBottom: 100,
+        marginBottom: 20,
     },
     appearHeading:{
         marginBottom: 20,
