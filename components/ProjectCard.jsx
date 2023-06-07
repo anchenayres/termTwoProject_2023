@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
+import CompetitionEntryScreen from '../screens/CompetitionEntryScreen';
 
 const ProjectCard = (props) => {
 
@@ -14,7 +15,7 @@ const ProjectCard = (props) => {
             <Text style={styles.descr}>{data.descr}</Text>
 
             <TouchableOpacity style={styles.submitButton}>
-                <Text style={styles.submitButtonText}>Enter Competition</Text>
+                <Text style={styles.submitButtonText} onPress={CompetitionEntryScreen}>Enter Competition</Text>
             </TouchableOpacity>
 
 
