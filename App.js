@@ -8,6 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CompetitionScreen from './screens/CompetitionScreen';
+import ViewProfileScreen from './screens/ViewProfileScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +43,8 @@ export default function App() {
         <Drawer.Screen name='Profile' component={ProfileScreen}/>
         <Drawer.Screen name='Login' component={LoginScreen}/>
         <Drawer.Screen name='Competitions' component={CompetitionScreen}/>
+        <Drawer.Screen name='ViewProfile' component={ViewProfileScreen}/>
+
       </Drawer.Navigator>
     </NavigationContainer>
 
