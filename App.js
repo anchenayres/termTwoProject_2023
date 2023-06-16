@@ -9,6 +9,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CompetitionScreen from './screens/CompetitionScreen';
 import ViewProfileScreen from './screens/ViewProfileScreen';
+import 'react-native-gesture-handler';
 
 
 
