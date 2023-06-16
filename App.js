@@ -44,6 +44,8 @@ export default function App() {
         <Drawer.Screen name='Login' component={LoginScreen}/>
         <Drawer.Screen name='Competitions' component={CompetitionScreen}/>
         <Drawer.Screen name='ViewProfile' component={ViewProfileScreen}/>
+        <Drawer.Screen name='register' component={RegisterSceen}/>
+
 
       </Drawer.Navigator>
     </NavigationContainer>
