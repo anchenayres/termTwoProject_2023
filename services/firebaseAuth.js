@@ -1,5 +1,6 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import {auth} from '../firebase';
+import { Alert } from 'react-native';
 
 
 //Register User Functionality (REGISTER SCREEN)
@@ -10,22 +11,64 @@ const registerNewUser = (email, password) => {
         //sign in
         const user = userCredential.user;
         console.log('New User: ' + user)
+
+        updateAuthProfile(email) //to update profile in authentication
         //create user in  DB
         
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode + ';' + errorMessage)
-    })
+        console.log(errorCode + ':' + errorMessage)
+
+        Alert.alert("Oops!", errorCode, [
+            {text: 'Try again', onPress: () => {}}
+        ])
+    });
 }
 
 //Sign In Functionality (LOGIN SCREEN)
-const signInUser = () => {
+export const signInUser = async (email, password) => {
 
+    await signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        //signed in
+        const user = userCredential.user;
+        console.log("User Signed In: " + user.email)
+
+        //success alert
+        Alert.alert("You're In!", "Successfully logged On!", [
+            {text: "Thanks", onPress: () => {}}
+        ])
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+    })
 }
 
 //Sign Out Functionality
 const signOutUser = () => {
+    signOut(auth)
+    .then(() => {
+        console.log("Logged Out Successfully")
+    }).catch((error) => {
+        console.log(error.errorMessage)
+    })
+}
 
+export const getCurrentUser = () => {
+    return auth.currentUser;
+}
+
+const updateAuthProfile = (email) => {
+    updateProfile(auth.currentUser, {
+        displayName: email, photoURL: "https://media.istockphoto.com/id/1265032285/photo/portrait-of-young-girl-with-clean-skin-and-soft-makeup.jpg?s=612x612&w=0&k=20&c=GcrInK2xkdxcInX0quxPrdFGkv8DXXDPShUia2T1pv4="
+    }).then(() => {
+        //profile update
+
+    }).catch((error) => {
+
+    });
 }
