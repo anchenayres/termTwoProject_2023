@@ -6,12 +6,16 @@ import ProjectScreen from "./ProjectScreen";
 
 const ViewProfileScreen = () => {    
 
+    const [name, setUsername] = useState('')
+    const [description, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     return (
 
     <View>
         <Image style={styles.face} source={require("../assets/faceOne.jpg")} />
-        <Text style={styles.nameAge}>Jessie Jay | 24</Text>
-        <Text style={styles.description}>Gender: Female | Eye Colour: Blue | Hair Colour: Blond | Height: 1.78m | Bust: 86cm | Waist: 79cm | Hips: 90cm</Text>
+        <Text style={styles.nameAge}>{name}Jessie Jay | 24</Text>
+        <Text style={styles.description}>{description}Gender: Female | Eye Colour: Blue | Hair Colour: Blond | Height: 1.78m | Bust: 86cm | Waist: 79cm | Hips: 90cm</Text>
         <Text style={styles.languages}>Languages: English, French, Afrikaans</Text>
 
         <Text style={styles.categoryTitle}>Categories</Text>
@@ -39,9 +43,6 @@ const ViewProfileScreen = () => {
 export default ViewProfileScreen
 
 const styles = StyleSheet.create({
-    container: {
-        padding: 20
-    },
     face:{
         height: 150,
         width: 150,
@@ -81,19 +82,19 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     categoryTitle:{
-        marginLeft: 20,
+        alignSelf: 'center',
         marginTop: 40,
     },
     categories:{
-        marginLeft: 20,
+        alignSelf: 'center',
         marginTop: 20,
     },
     agencyTitle:{
-        marginLeft: 20,
-        marginTop: 40,
+        alignSelf: 'center',
+        marginTop: 20,
     },
     agency:{
-        marginLeft: 20,
+        alignSelf: 'center',
         marginTop: 20,
     },
     competitions:{
