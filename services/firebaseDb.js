@@ -8,7 +8,7 @@ export const createUserInDb = async (username, email, uid) => {
     try {
         console.log("Creating user in db... " + uid)
 
-        const docRef = await addDoc(doc(db, "users", uid), {
+        const docRef = await addDoc(doc(db, "Users", uid), {
             username,
             email
             })

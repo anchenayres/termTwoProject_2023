@@ -39,21 +39,29 @@ export const signInUser = async (email, password) => {
         const user = userCredential.user;
         console.log("User Signed In: " + user.email)
 
-        //success alert
-        Alert.alert("You're In!", "Successfully logged On!", [
-            {text: "Thanks", onPress: () => {}}
+        setLoading(true)
+
+        Alert.alert("You're in", "You have successfully logged in", [
+            {text: "Thanks", onPress:() =>{}}
         ])
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
 
+        console.log(errorCode + ":" + errorMessage)
+        
+        Alert.alert("Oops!", errorMessage, [
+            {text: "Thanks", onPress:() =>{}}
+        ])
+
+
     })
 }
 
 //Sign Out Functionality
 const signOutUser = () => {
-    signOut(auth)
+    signOutUser(auth)
     .then(() => {
         console.log("Logged Out Successfully")
     }).catch((error) => {

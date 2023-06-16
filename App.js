@@ -28,7 +28,7 @@ export default function App() {
         <Stack.Navigator 
         initialRouteName='Login' 
         screenOptions={{headerShown: false}}>
-          
+
           {!loggedIn ?(
           <>
             <Stack.Screen name='Login' component={LoginScreen} />

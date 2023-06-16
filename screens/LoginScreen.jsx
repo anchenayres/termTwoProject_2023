@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, TextInput, View, Image, Alert, Button, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from "react-native-safe-area-context";
+import { signInUser } from "../services/firebaseAuth";
 
 
 const LoginScreen = ({ navigation }) => {
@@ -10,7 +11,7 @@ const LoginScreen = ({ navigation }) => {
 
     const [loading, setLoading] = useState(false)
 
-    const logOn =() => {
+    const logOn = async () => {
         setLoading(true)
         if(!email || !password) {
             Alert.alert("Try again", "Please Fill in your Email and Password", [
@@ -18,10 +19,9 @@ const LoginScreen = ({ navigation }) => {
             ])
 
         } else {
-            setLoading(true)
-            Alert.alert("You're in", "You have successfully logged in", [
-                {text: "Thanks", onPress:() => {setLoading(false)}}
-            ])
+           await signInUser(email, password)
+           setLoading(false)
+
         }
     }
 

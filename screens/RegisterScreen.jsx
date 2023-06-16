@@ -3,7 +3,8 @@ import { Text, TextInput, View, Image, Button, TouchableOpacity } from 'react-na
 import { globalStyles } from "../utils/GlobalStyles";
 import { registerNewUser } from "../services/firebaseAuth";
 
-const RegisterScreen = () => {
+
+const RegisterScreen = ({navigation}) => {
 
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
@@ -50,7 +51,7 @@ const RegisterScreen = () => {
                 <Text style={globalStyles.submitButtonText}>Next</Text>
             </TouchableOpacity>
 
-        <Button title='Already have an account?' color={'black'} />
+        <Button title='Already have an account?' color={'black'} onPress={() => navigation.navigate('Login')}/>
         </View>
     )
 }
