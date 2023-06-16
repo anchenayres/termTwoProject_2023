@@ -1,12 +1,17 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, TextInput, View, Image, Button, TouchableOpacity } from 'react-native';
 import { globalStyles } from "../utils/GlobalStyles";
+import { registerNewUser } from "../services/firebaseAuth";
 
 const RegisterScreen = () => {
 
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const registerUser = () => {
+        registerNewUser(email, password)
+    }
 
     return (
 
@@ -41,7 +46,7 @@ const RegisterScreen = () => {
             secureTextEntry={true}
             onChangeText= {newValue => setPassword(newValue)} />
 
-            <TouchableOpacity style={globalStyles.submitButton}>
+            <TouchableOpacity style={globalStyles.submitButton} onPress={registerUser}>
                 <Text style={globalStyles.submitButtonText}>Next</Text>
             </TouchableOpacity>
 

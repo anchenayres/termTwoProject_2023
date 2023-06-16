@@ -1,11 +1,11 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import {auth} from '../firebase';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfil } from 'firebase/auth';
+import {auth} from './firebase';
 import { Alert } from 'react-native';
 import { createUserInDb } from './firebaseDb';
 
 
 //Register User Functionality (REGISTER SCREEN) // change
-const registerNewUser = (email, password) => {
+export const registerNewUser = (username, email, password) => {
 
     createUserWithEmailAndPassword(auth, email, password)
     .then(async(userCredential) => {
@@ -13,10 +13,10 @@ const registerNewUser = (email, password) => {
         const user = userCredential.user;
         console.log('New User: ' + user)
 
-        updateAuthProfile(email) //to update profile in authentication
+        updateAuthProfile(username) //to update profile in authentication
 
         //create user in  DB
-        await createUserInDb(email, user.uid) 
+        await createUserInDb(username, user.uid) 
     })
     .catch((error) => {
         const errorCode = error.code;

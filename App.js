@@ -19,36 +19,45 @@ export default function App() {
   //TODO: setup navigation here
   //TODO: check if user is logged in
 
-  const loggedIn = true
+  const loggedIn = false
 
   return (
 
     // Route for navigation
 
-    // <NavigationContainer>
-    //     <Stack.Navigator initialRouteName='Login' >
-    //       {!loggedIn ?(
-    //       <>
-    //         <Stack.Screen name='Login' component={LoginScreen} />
-    //         <Stack.Screen name='Register' component={RegisterSceen} />
-    //       </>
-    //       ): (
-    //         <Stack.Screen name='Competitions' component={CompetitionScreen} />
-    //       )}
-    //     </Stack.Navigator>
-    // </NavigationContainer>
-
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="LoginScreen" >
-        <Drawer.Screen name='Profile' component={ProfileScreen}/>
-        <Drawer.Screen name='Login' component={LoginScreen}/>
-        <Drawer.Screen name='Competitions' component={CompetitionScreen}/>
-        <Drawer.Screen name='ViewProfile' component={ViewProfileScreen}/>
-        <Drawer.Screen name='register' component={RegisterSceen}/>
-
-
-      </Drawer.Navigator>
+        <Stack.Navigator initialRouteName='Login' >
+          {!loggedIn ?(
+          <>
+            <Stack.Screen name='Login' component={LoginScreen} />
+            <Stack.Screen name='Register' component={RegisterSceen} />
+          </>
+          ): (
+          <>
+          <Stack.Screen name='Profile' component={ProfileScreen} />
+          <Stack.Screen 
+          name='Competitions' 
+          component={CompetitionScreen} 
+          options={({route}) => ({
+            headerShown: true,
+            title: route.params.project.title
+          })}/>
+          </>
+          )}
+        </Stack.Navigator>
     </NavigationContainer>
+
+    // <NavigationContainer>
+    //   <Drawer.Navigator initialRouteName="LoginScreen" >
+    //     <Drawer.Screen name='Profile' component={ProfileScreen}/>
+    //     <Drawer.Screen name='Login' component={LoginScreen}/>
+    //     <Drawer.Screen name='Competitions' component={CompetitionScreen}/>
+    //     <Drawer.Screen name='ViewProfile' component={ViewProfileScreen}/>
+    //     <Drawer.Screen name='register' component={RegisterSceen}/>
+
+
+    //   </Drawer.Navigator>
+    // </NavigationContainer>
 
     // <NavigationContainer>
     //   <Stack.Navigator initialRouteName='Login'>
