@@ -10,12 +10,13 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CompetitionScreen from './screens/CompetitionScreen';
 import ViewProfileScreen from './screens/ViewProfileScreen';
 
-const Stack = createNativeStackNavigator();
+
+
 
 export default function App() {
 
-  const Drawer = createDrawerNavigator();
-
+  // const Drawer = createDrawerNavigator();
+  const Stack = createNativeStackNavigator();
   //TODO: setup navigation here
   //TODO: check if user is logged in
 

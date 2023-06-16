@@ -1,5 +1,6 @@
 import { Timestamp, addDoc, doc } from "firebase/firestore";
-import {db} from "../firebase";
+// import {db} from "./firebase";
+import { db } from "../utils/firebase";
 
 //user collection
 export const createUserInDb = async (username, email, iud) => {

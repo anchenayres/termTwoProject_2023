@@ -1,7 +1,8 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfil } from 'firebase/auth';
-import {auth} from './firebase';
 import { Alert } from 'react-native';
 import { createUserInDb } from './firebaseDb';
+import { auth } from '../utils/firebase';
+
 
 
 //Register User Functionality (REGISTER SCREEN) // change
