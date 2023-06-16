@@ -3,17 +3,15 @@ import { Timestamp, addDoc, doc } from "firebase/firestore";
 import { db } from "../utils/firebase";
 
 //user collection
-export const createUserInDb = async (username, email, iud) => {
+export const createUserInDb = async (username, email, uid) => {
 
     try {
         console.log("Creating user in db... " + uid)
 
         const docRef = await addDoc(doc(db, "users", uid), {
             username,
-            email,
-            role: "Model",
-            createdAt: Timestamp.now()
-    })
+            email
+            })
     console.log("User added doc id:" + docRef.id)
 
     } catch(e) {

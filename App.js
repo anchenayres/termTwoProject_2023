@@ -13,12 +13,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import * as React from 'react';
-
-export default function App() {
-
   // const Drawer = createDrawerNavigator();
   const Stack = createNativeStackNavigator();
+
+export default function App() {
 
   const loggedIn = false
 
@@ -27,7 +25,10 @@ export default function App() {
     // Route for navigation
 
     <NavigationContainer>
-        <Stack.Navigator initialRouteName='Login' >
+        <Stack.Navigator 
+        initialRouteName='Login' 
+        screenOptions={{headerShown: false}}>
+          
           {!loggedIn ?(
           <>
             <Stack.Screen name='Login' component={LoginScreen} />
@@ -50,17 +51,6 @@ export default function App() {
 
   );
 }
-    // <NavigationContainer>
-    //   <Drawer.Navigator initialRouteName="LoginScreen" >
-    //     <Drawer.Screen name='Profile' component={ProfileScreen}/>
-    //     <Drawer.Screen name='Login' component={LoginScreen}/>
-    //     <Drawer.Screen name='Competitions' component={CompetitionScreen}/>
-    //     <Drawer.Screen name='ViewProfile' component={ViewProfileScreen}/>
-    //     <Drawer.Screen name='register' component={RegisterSceen}/>
-
-
-    //   </Drawer.Navigator>
-    // </NavigationContainer>
 
 
 
