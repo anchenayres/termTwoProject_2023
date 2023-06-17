@@ -10,6 +10,7 @@ import ProfileScreen from './screens/ProfileScreen'
 import CompetitionScreen from './screens/CompetitionScreen';
 import ViewProfileScreen from './screens/ViewProfileScreen';
 import HomeTab from './navigators/HomeTab';
+import CompetitionEntryScreen from './screens/CompetitionEntryScreen'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
@@ -52,6 +53,8 @@ export default function App() {
           ): (
           <>
           <Stack.Screen name='Home' component={HomeTab} />
+          <Stack.Screen name='Add' component={CompetitionEntryScreen} options={{headerShown: true, title: "Add a new Compotition"}}/>
+
           <Stack.Screen 
           name='Competitions' 
           component={HomeTab} 

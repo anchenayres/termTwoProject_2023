@@ -59,8 +59,8 @@ export const signInUser = async (email, password) => {
 }
 
 //Sign Out Functionality
-const signOutUser = () => {
-    signOutUser(auth)
+export const signOutUser = () => {
+     signOutUser(auth)
     .then(() => {
         console.log("Logged Out Successfully")
     }).catch((error) => {

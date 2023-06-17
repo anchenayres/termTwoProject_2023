@@ -3,7 +3,7 @@ import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons';
 import CompetitionEntryScreen from '../screens/CompetitionEntryScreen';
 
-const ProjectCard = (props) => {
+const ProjectCard = (props, {navigation}) => {
 
     const {data} = props
 
@@ -14,7 +14,7 @@ const ProjectCard = (props) => {
             <Text style={styles.description}>{data.creator} {data.year} | Entries Close: {data.endDate}</Text>
             <Text style={styles.descr}>{data.descr}</Text>
 
-            <TouchableOpacity style={styles.submitButton}>
+            <TouchableOpacity style={styles.submitButton} onPress={() => navigation.navigate('EnterComp')}>
                 <Text style={styles.submitButtonText} onPress={CompetitionEntryScreen}>Enter Competition</Text>
             </TouchableOpacity>
 

@@ -5,7 +5,6 @@ import { Pressable } from 'react-native';
 import { StyleSheet } from 'react-native';
 import ViewProfileScreen from '../screens/ViewProfileScreen';
 
-
 const Tab = createBottomTabNavigator();
 
 const HomeTab = () => {
