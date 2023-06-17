@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { StyleSheet, Text, TextInput, View, Image, Button, ActivityIndicator, TouchableOpacity, ScrollView } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Image, Button, ActivityIndicator, TouchableOpacity, ScrollView, Pressable } from 'react-native';
 import { getCurrentUser } from "../services/firebaseAuth";
 import { addCompetitionCollection } from "../services/firebaseDb";
 
@@ -50,6 +50,18 @@ const CompetitionEntryScreen = ({navigation}) => {
         }
     
         }
+
+        //image picker
+        const [imageOne, setImageOne] = useState(null)
+        const [imageTwo, setImageTwo] = useState(null)
+
+        const [featureOne, setFeatureOne] = useState("")
+        const [featureTwo, setFeatureTwo] = useState("")
+
+        const pickImageFromLibrary = () =>{
+
+        }
+
 
     return (
 
@@ -103,6 +115,32 @@ const CompetitionEntryScreen = ({navigation}) => {
         defaultValue={tech}
         onChangeText={newValue => setTech(newValue)} />
 
+        {/* image picker */}
+        <View style={styles.inputGroup}>
+            <TextInput
+            style={[styles.input, styles.inputGroupItem]}
+            placeholder="Feature One Title"
+            onChangeText={newText => setFeatureOne(newText)}
+            defaultValue={featureOne}
+            returnKeyType="next"/>
+{imageOne ? (
+            <Pressable>
+                <Ionicons name="trash-outline" size={32} color="red"/>
+            </Pressable>
+            ):(
+                <>
+                <Pressable onPress={() => pickImageFromLibrary(1)}>
+                <Ionicons name="images-outline" size={32} color="black"/>
+                </Pressable>
+                <Pressable onPress={() => takeImageFromCamera(1)}>
+                <Ionicons name="carmera-outline" size={34} color="black"/>
+                </Pressable>
+                </>
+            )}
+        </View>
+
+        {imageOne && <Image source={{ uri: imageOne }} style={{width:200, height:200, marginTop:20}}/>
+
     {!loading ?  (
         <TouchableOpacity style={styles.submitButton} onPress={createCompetition}>
             <Text style={styles.submitButtonText}>Create Competition</Text>
@@ -111,9 +149,8 @@ const CompetitionEntryScreen = ({navigation}) => {
 
         ):  <ActivityIndicator animating={loading} size={40} />}
         </View>
-    )
-}
-
+    
+    )}
 export default CompetitionEntryScreen
 
 const styles = StyleSheet.create({
