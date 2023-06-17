@@ -6,6 +6,7 @@ import ProjectScreen from "./ProjectScreen";
 
 const ViewProfileScreen = () => {    
 
+    
     const [name, setUsername] = useState('')
     const [description, setEmail] = useState('')
     const [password, setPassword] = useState('')

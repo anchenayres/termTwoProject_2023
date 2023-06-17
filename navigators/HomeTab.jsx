@@ -2,7 +2,9 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CompetitionScreen from '../screens/CompetitionScreen';
 import { Pressable } from 'react-native';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { StyleSheet } from 'react-native';
+import ViewProfileScreen from '../screens/ViewProfileScreen';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -48,6 +50,7 @@ return (
                         color='white'/>
                 </Pressable>
     )}}/>
+
     
         
     </Tab.Navigator>
