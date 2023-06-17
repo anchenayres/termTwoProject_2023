@@ -1,4 +1,4 @@
-import { Timestamp, addDoc, collection, doc } from "firebase/firestore";
+import { Timestamp, addDoc, collection, doc, getDocs} from "firebase/firestore";
 import { db } from "../utils/firebase";
 
 
@@ -34,5 +34,23 @@ export const addCompetitionCollection = async (competition) => {
         }
     } catch(e) {
         console.log("Something went wrong")
+    }
+}
+
+//getting all the competitions
+export const getAllCompetitionsFromCollection = async () =>{
+    try {
+        var competitions = []
+
+        const snapshot = await getDocs(collection(db, "competitions"))
+        snapshot.forEach((doc) => {
+            console.log(doc.id, "=>", doc.data())
+            competitions.push(doc.data())
+        })
+        return competitions
+    } catch(e) {
+        console.log("Something went wrong" + e)
+        return []
+
     }
 }

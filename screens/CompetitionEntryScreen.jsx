@@ -39,6 +39,7 @@ const CompetitionEntryScreen = ({navigation}) => {
            if(success) {
             console.log("added the competition successfully")
             setLoading(false)
+            navigation.goBack()
 
            } else {
             console.log("Oops! Competition couldn't be added")

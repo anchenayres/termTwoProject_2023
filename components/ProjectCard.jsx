@@ -19,13 +19,13 @@ const ProjectCard = (props, {navigation}) => {
             </TouchableOpacity>
 
 
-        <View style={styles.techBox}>
+        {/* <View style={styles.techBox}>
             {data.tech.map((technology, index) => {
                     <View key={index} style={styles.badge}>
                     <Text style={styles.badgeLabel}>{technology}</Text>
                     </View>
             })}
-            </View>
+            </View> */}
 
 
         </View>
