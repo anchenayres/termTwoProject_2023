@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-
+import React from 'react';
 
 import LoginScreen from './screens/LoginScreen'
 import RegisterSceen from './screens/RegisterScreen'

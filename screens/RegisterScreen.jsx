@@ -11,7 +11,7 @@ const RegisterScreen = ({navigation}) => {
     const [password, setPassword] = useState('')
 
     const registerUser = () => {
-        registerNewUser(email, password)
+        registerNewUser(username, email, password)
     }
 
     return (

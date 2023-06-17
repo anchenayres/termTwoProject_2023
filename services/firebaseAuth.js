@@ -4,9 +4,8 @@ import { createUserInDb } from './firebaseDb';
 import { auth } from '../utils/firebase';
 
 
-
 //Register User Functionality (REGISTER SCREEN) // change
-export const registerNewUser = (email, password) => {
+export const registerNewUser = (username, email, password) => {
 
     createUserWithEmailAndPassword(auth, email, password)
     .then(async(userCredential) => {
@@ -17,7 +16,7 @@ export const registerNewUser = (email, password) => {
         updateAuthProfile(username) //to update profile in authentication
 
         //create user in  DB
-        await createUserInDb(username, user.uid) 
+        await createUserInDb(username, email, user.uid) 
     })
     .catch((error) => {
         const errorCode = error.code;
@@ -39,7 +38,7 @@ export const signInUser = async (email, password) => {
         const user = userCredential.user;
         console.log("User Signed In: " + user.email)
 
-        setLoading(true)
+        // setLoading(true)
 
         Alert.alert("You're in", "You have successfully logged in", [
             {text: "Thanks", onPress:() =>{}}
@@ -51,7 +50,7 @@ export const signInUser = async (email, password) => {
 
         console.log(errorCode + ":" + errorMessage)
         
-        Alert.alert("Oops!", errorMessage, [
+        Alert.alert("Oops! Unsuccessfull SignIn", errorMessage, [
             {text: "Thanks", onPress:() =>{}}
         ])
 
@@ -73,10 +72,11 @@ export const getCurrentUser = () => {
     return auth.currentUser;
 }
 
-const updateAuthProfile = (email) => {
+const updateAuthProfile = (username) => {
     updateProfile(auth.currentUser, {
-        displayName: email, photoURL: "https://media.istockphoto.com/id/1265032285/photo/portrait-of-young-girl-with-clean-skin-and-soft-makeup.jpg?s=612x612&w=0&k=20&c=GcrInK2xkdxcInX0quxPrdFGkv8DXXDPShUia2T1pv4="
+        displayName: username, photoURL: "https://media.istockphoto.com/id/1265032285/photo/portrait-of-young-girl-with-clean-skin-and-soft-makeup.jpg?s=612x612&w=0&k=20&c=GcrInK2xkdxcInX0quxPrdFGkv8DXXDPShUia2T1pv4="
     }).then(() => {
+
         //profile update
 
     }).catch((error) => {
