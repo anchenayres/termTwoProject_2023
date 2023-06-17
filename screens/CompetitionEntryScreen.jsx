@@ -1,19 +1,55 @@
 import React, {useState} from "react";
 import { StyleSheet, Text, TextInput, View, Image, Button, ActivityIndicator, TouchableOpacity, ScrollView } from 'react-native';
+import { getCurrentUser } from "../services/firebaseAuth";
+import { addCompetitionCollection } from "../services/firebaseDb";
 
+// "add competition screen"
 const CompetitionEntryScreen = ({navigation}) => {
 
     const [title, setTitle] = useState("") 
     const [creator, setCreator] = useState("") //2 March
     const [year, setYear] = useState("")
     const [endDate, setEndDate] = useState("")
-    const [desc, setDesc] = useState("")
+    const [descr, setDescr] = useState("")
     const [tech, setTech] = useState("") //runway
 
     const [loading, setLoading] = useState(false)
-    const createCompotition = () =>{
 
-    }
+
+    
+    const createCompetition = async () =>{
+
+        if(title && creator && year && endDate && descr && tech){
+
+            setLoading(true)
+            var personInfo = getCurrentUser()
+
+            var competition = {
+                title,
+                creator,
+                year,
+                endDate,
+                descr,
+                tech,
+                person: personInfo.displayName, //creator of competition
+                userId: personInfo.uid //reference the user
+            }
+        
+           const success = await addCompetitionCollection(competition)
+           if(success) {
+            console.log("added the competition successfully")
+            setLoading(false)
+
+           } else {
+            console.log("Oops! Competition couldn't be added")
+            setLoading(false)
+           }
+        } else {
+            Alert.alert("Oops! Please add all the Competition information.")
+        }
+    
+        }
+
     return (
 
         <View style={styles.inputGroup}>
@@ -47,8 +83,8 @@ const CompetitionEntryScreen = ({navigation}) => {
         style={styles.input} 
         keyboardType='default'
         placeholder='Description of the Competition' 
-        defaultValue={desc}
-        onChangeText={newValue => setDesc(newValue)} />
+        defaultValue={descr}
+        onChangeText={newValue => setDescr(newValue)} />
 
         <Text style={styles.inputLabel}>End Date</Text>
         <TextInput 
@@ -66,15 +102,8 @@ const CompetitionEntryScreen = ({navigation}) => {
         defaultValue={tech}
         onChangeText={newValue => setTech(newValue)} />
 
-
-
-
-        
-
-
-
-{!loading ?  (
-        <TouchableOpacity style={styles.submitButton} onPress={createCompotition}>
+    {!loading ?  (
+        <TouchableOpacity style={styles.submitButton} onPress={createCompetition}>
             <Text style={styles.submitButtonText}>Create Competition</Text>
         </TouchableOpacity>
 
@@ -92,6 +121,15 @@ const styles = StyleSheet.create({
     },
     inputGroup:{
         alignSelf: 'center',
-    }
+        margin: 20,
+    },
+    submitButton:{
+        marginTop: 10,
+        backgroundColor: 'pink',
+        width: 150,
+        height: 30,
+        borderRadius: 10,
+    },
+
 
 })

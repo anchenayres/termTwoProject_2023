@@ -1,4 +1,4 @@
-import { Timestamp, addDoc, doc } from "firebase/firestore";
+import { Timestamp, addDoc, collection, doc } from "firebase/firestore";
 import { db } from "../utils/firebase";
 
 
@@ -18,4 +18,21 @@ export const createUserInDb = async (username, email, uid) => {
         console.log("Something went wrong: " + docRef.id)
     }
 
+}
+
+//competitions collection
+
+export const addCompetitionCollection = async (competition) => {
+    try {
+        const docRef = await addDoc(collection(db, "competitions"), competition) //addDoc is to generate id
+
+        console.log("Added competition successfully!" + docRef.id)
+        if(docRef.id) {
+            return true
+        } else {
+            return false
+        }
+    } catch(e) {
+        console.log("Something went wrong")
+    }
 }

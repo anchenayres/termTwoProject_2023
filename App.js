@@ -53,7 +53,7 @@ export default function App() {
           ): (
           <>
           <Stack.Screen name='Home' component={HomeTab} />
-          <Stack.Screen name='Add' component={CompetitionEntryScreen} options={{headerShown: true, title: "Add a new Compotition"}}/>
+          <Stack.Screen name='Add' component={CompetitionEntryScreen} options={{headerShown: true, title: "Add a new Competition"}}/>
 
           <Stack.Screen 
           name='Competitions' 
