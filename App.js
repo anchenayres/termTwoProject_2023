@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import {auth} from './utils/firebase'
 
 import LoginScreen from './screens/LoginScreen'
 import RegisterSceen from './screens/RegisterScreen'
@@ -8,17 +9,31 @@ import ProjectScreen from './screens/ProjectScreen'
 import ProfileScreen from './screens/ProfileScreen'
 import CompetitionScreen from './screens/CompetitionScreen';
 import ViewProfileScreen from './screens/ViewProfileScreen';
+import HomeTab from './navigators/HomeTab';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { onAuthStateChanged } from 'firebase/auth';
 
-  // const Drawer = createDrawerNavigator();
   const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-  const loggedIn = false
+  const [loggedIn, setLoggedIn] = useState(false)
+
+  useEffect(() =>{
+
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
+
+      if(user) {
+        setLoggedIn(true)
+      } else {
+        setLoggedIn(false)
+      }
+    })
+    return unsubscribed;
+  }, [])
 
   return (
 
@@ -36,10 +51,10 @@ export default function App() {
           </>
           ): (
           <>
-          <Stack.Screen name='Profile' component={ProfileScreen} />
+          <Stack.Screen name='Home' component={HomeTab} />
           <Stack.Screen 
           name='Competitions' 
-          component={CompetitionScreen} 
+          component={HomeTab} 
           options={({route}) => ({
             headerShown: true,
             title: route.params.project.title
