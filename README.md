@@ -4,13 +4,10 @@
 <br />
 https://github.com/anchenayres/termTwoProject_2023.git
 
-![GitHub repo size](https://github.com/anchenayres/termTwoProject_2023.git)
-![GitHub watchers](https://github.com/anchenayres/termTwoProject_2023.git)
+![GitHub repo size](https://img.shields.io/github/repo-size/username/projectname?color=%000000)
+![GitHub watchers](https://img.shields.io/github/watchers/username/projectname?color=%000000)
 ![GitHub language count](https://img.shields.io/github/languages/count/username/projectname?color=%000000)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/username/projectname?color=%000000)
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![Instagram][instagram-shield]][instagram-url]
-[![Behance][behance-shield]][behance-url]
 
 <!-- HEADER SECTION -->
 <h5 align="center" style="padding:0;margin:0;">Anchen Ayres</h5>
@@ -19,15 +16,15 @@ https://github.com/anchenayres/termTwoProject_2023.git
 </br>
 <p align="center">
 
-  <a href="https://github.com/username/projectname">
+  <a href="https://github.com/anchenayres/termTwoProject_2023.git">
     <img src="./assets/modelLogo.png" alt="Logo" width="140" height="140">
   </a>
   
   <h3 align="center">Model Search</h3>
 
   <p align="center">
-    Short Project Slogan / Description <br>
-      <a href="https://github.com/username/projectname"><strong>Explore the docs »</strong></a>
+    This app allows users to create competitions, vote for the best models and compete agaisnt one another as a chance to exploit their beauty <br>
+      <a href="https://github.com/anchenayres/termTwoProject_2023.git"><strong>Explore the docs »</strong></a>
    <br />
    <br />
    <a href="path/to/demonstration/video">View Demo</a>
@@ -37,9 +34,8 @@ https://github.com/anchenayres/termTwoProject_2023.git
     <a href="https://github.com/username/projectname/issues">Request Feature</a>
 </p>
 <!-- TABLE OF CONTENTS -->
-## Table of Contents
+Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [About the Project](#about-the-project)
   - [Project Description](#project-description)
   - [Built With](#built-with)
@@ -80,13 +76,12 @@ https://github.com/anchenayres/termTwoProject_2023.git
 
 ### Project Description
 
-A nice introduction to this amazing project of mine.
+Welcome to Model Search. The competitive platform for users to exploit their beauty as they compete for the titles. Users are able to create an account / sign into their account and create a profile best suited to them for all the users to see. They are then able to compete in existing competitions by simply uploading images of themselves and allowing other people to vote for who should win the compeition. The judges or users are also able to add new competitions to the app and allow other users the chance to compete. The most votes will be showcased and awards will be given accordingly. Good Luck!
 
 ### Built With
 
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
-* [Technology Name](path/to/technology/website)
+* [Expo](https://expo.dev/)
+* [Firebase](https://firebase.google.com/)
 
 <!-- GETTING STARTED -->
 <!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
