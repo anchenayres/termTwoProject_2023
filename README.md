@@ -157,7 +157,7 @@ Users are able to upload a new competition to the database collection where they
 
 ### Deployment
 
-## Deployment
+## IOS and Android 
 
 The app is deployed using Expo.
 1. Install EAS CLI (npm install -g eas-cli) 
