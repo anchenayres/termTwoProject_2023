@@ -264,7 +264,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 [image1]: /path/to/image.png
 [image2]: /path/to/image.png
 [image3]: ./assets/login.jpg
-[image4]: ./assets/register.jpg
+[image4]: ./assets/register.PNG
 [image5]: /path/to/image.png
 [image6]: /path/to/image.png
 [image7]: /path/to/image.png
