@@ -17,7 +17,7 @@ https://github.com/anchenayres/termTwoProject_2023.git
 <p align="center">
 
   <a href="https://github.com/anchenayres/termTwoProject_2023.git">
-    <img src="./assets/modelLogo.png" alt="Logo" width="140" height="140">
+    <img src="./assets/modelLogo.png" alt="Logo" width="200" height="200">
   </a>
   
   <h3 align="center">Model Search</h3>
@@ -44,7 +44,7 @@ Table of Contents
   - [How to install](#how-to-install)
   - [Installation](#installation)
 - [Features and Functionality](#features-and-functionality)
-  - [Feature 1](#feature-1)
+  - [Login / Sign Up](#login--sign-up)
   - [Feature 2](#feature-2)
   - [Feature 3](#feature-3)
 - [Concept Process](#concept-process)
@@ -100,12 +100,12 @@ Here are a couple of ways to clone this repo:
 
 1. Software </br>
 `Android Studio` -> `File` -> `New` -> `From Version Control` -> `Git`</br>
-Enter `https://github.com/username/projectname.git` into the URL field and press the `Clone` button.
+Enter `https://github.com/anchenayres/termTwoProject_2023.git` into the URL field and press the `Clone` button.
 
 2. Clone Repository </br>
 Run the following in the command-line to clone the project:
    ```sh
-   git clone https://github.com/username/projectname.git
+   git clone https://github.com/anchenayres/termTwoProject_2023.git
    ```
     Open `Software` and select `File | Open...` from the menu. Select cloned directory and press `Open` button
 
@@ -115,25 +115,18 @@ Run the following in the command-line to install all the required dependencies:
    npm install
    ```
 
-4. Get a free API Key at [https://example.com](https://example.com) and enter it in the `config.js` file:
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-
 <!-- FEATURES AND FUNCTIONALITY-->
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
+### Login / Sign Up
 
-![image2][image2]
-### Feature 1
+Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts. 
 
-Description of Feature
 
 ![image3][image3]
 ### Feature 2
 
-Description of Feature
+Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts.
 
 ![image4][image4]
 ### Feature 3
