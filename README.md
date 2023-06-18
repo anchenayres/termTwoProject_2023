@@ -123,7 +123,7 @@ Run the following in the command-line to install all the required dependencies:
 Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts. 
 
 
-![image3][image3]
+![login][image3]
 ### Feature 2
 
 Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts.
