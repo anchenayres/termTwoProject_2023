@@ -119,9 +119,12 @@ Run the following in the command-line to install all the required dependencies:
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
 
+### Authentication
+
 ### Login Screen
 
 Authentication allows users who are already registered in the firebase database collection of 'users' to access their account. Passwords are encrypted as they sign up to the app which adds to the security of personal information. Only registered users are able to create, delete, or update any of thier information. 
+
 ![image3][image3]
 
 ### Register Screen
@@ -129,12 +132,28 @@ Authentication allows users who are already registered in the firebase database 
 The regsiter screen is for new users who are able to create their profiles. As a user registers, their information gets added to the firebase database and is then a registered user.
 
 ![image4][image4]
-### Feature 3
 
-Description of Feature
+### Navigation
+
+### Stack Navigation
+
+The app makes use of stack and bottom tab navigation to navigate through the different screens. The stack navigation is used when a user wants to log into their account or register. If the user is in the login screen, a button allows the user to navigate back to the register screen. Once a user has logged in or registered, they will navigate straight to the competitions screen where bottom tab navigation is used.
+
+### Bottom Tab Navigation
+
+Bottom tab navigation allows the user to navigate between the screens with the touch of a button. The different tabs are available at the bottom of the screen with the title and an image which is imported from Ionicons as part of react native navigation.
+
+### All Competitions Screen
+
+When a competition is available to the all the users in the database, it will be displayed in the competitions tab. Information regarding the competition is displayed with a button to be able to compete in the competition where users will then upload an image of themselves where other users are then able to vote. A user is not able to vote for their own competition entry.
 
 ![image5][image5]
 
+### Add A New Competition
+
+Users are able to upload a new competition to the database collection where they will need to fill in the appropriate information which will then be available to all users to compete in.
+
+![image6][image6]
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -144,9 +163,7 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-![image5][image5]
 <br>
-![image6][image6]
 
 ### Wireframes
 
@@ -265,8 +282,8 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 [image2]: /path/to/image.png
 [image3]: ./assets/login.jpg
 [image4]: ./assets/register.PNG
-[image5]: /path/to/image.png
-[image6]: /path/to/image.png
+[image5]: ./assets/comp.jpg
+[image6]: ./assets/newComp.PNG
 [image7]: /path/to/image.png
 [image8]: /path/to/image.png
 [image9]: /path/to/image.png
