@@ -2,8 +2,9 @@
 
 <!-- Repository Information & Links-->
 <br />
+https://github.com/anchenayres/termTwoProject_2023.git
 
-![GitHub repo size](https://img.shields.io/github/repo-size/username/projectname?color=%000000)
+![GitHub repo size](https://img.shields.io/github/repo-size/anchenayres/termTwoProject_2023.gitcolor=%000000)
 ![GitHub watchers](https://img.shields.io/github/watchers/username/projectname?color=%000000)
 ![GitHub language count](https://img.shields.io/github/languages/count/username/projectname?color=%000000)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/username/projectname?color=%000000)
@@ -12,9 +13,9 @@
 [![Behance][behance-shield]][behance-url]
 
 <!-- HEADER SECTION -->
-<h5 align="center" style="padding:0;margin:0;">Your Name & Surname</h5>
-<h5 align="center" style="padding:0;margin:0;">Student Number</h5>
-<h6 align="center">Subject Name & Year</h6>
+<h5 align="center" style="padding:0;margin:0;">Anchen Ayres</h5>
+<h5 align="center" style="padding:0;margin:0;">21100284</h5>
+<h6 align="center">DEV300 Third Year</h6>
 </br>
 <p align="center">
 
