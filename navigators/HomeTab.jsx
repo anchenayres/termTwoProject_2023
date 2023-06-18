@@ -4,6 +4,7 @@ import CompetitionScreen from '../screens/CompetitionScreen';
 import { Pressable } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { signOutUser } from '../services/firebaseAuth';
+import ViewProfileScreen from '../screens/ViewProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -52,8 +53,7 @@ return (
                 </Pressable>
     )}}/>
 
- 
-        
+
     </Tab.Navigator>
 )
 }

@@ -79,11 +79,11 @@ const CompetitionEntryScreen = ({navigation}) => {
 
     return (
 
-        <View style={styles.inputGroup}>
+        <View>
 
         <Text style={styles.inputLabel}>Title</Text>
         <TextInput 
-        style={styles.input} 
+        style={[styles.input, styles.inputGroupItem]}
         keyboardType='default'
         placeholder='Competition Title' 
         defaultValue={title}
@@ -91,7 +91,7 @@ const CompetitionEntryScreen = ({navigation}) => {
 
         <Text style={styles.inputLabel}>Year</Text>
         <TextInput 
-        style={styles.input} 
+        style={[styles.input, styles.inputGroupItem]}
         keyboardType='default'
         placeholder='2023' 
         defaultValue={year}
@@ -99,7 +99,7 @@ const CompetitionEntryScreen = ({navigation}) => {
 
         <Text style={styles.inputLabel}>Date</Text>
         <TextInput 
-        style={styles.input} 
+        style={[styles.input, styles.inputGroupItem]} 
         keyboardType='default'
         placeholder='Day and Month' 
         defaultValue={creator}
@@ -107,7 +107,7 @@ const CompetitionEntryScreen = ({navigation}) => {
 
         <Text style={styles.inputLabel}>Description</Text>
         <TextInput 
-        style={styles.input} 
+        style={[styles.input, styles.inputGroupItem]}
         keyboardType='default'
         placeholder='Description of the Competition' 
         defaultValue={descr}
@@ -115,7 +115,7 @@ const CompetitionEntryScreen = ({navigation}) => {
 
         <Text style={styles.inputLabel}>End Date</Text>
         <TextInput 
-        style={styles.input} 
+        style={[styles.input, styles.inputGroupItem]} 
         keyboardType='default'
         placeholder='Day, Month and Year' 
         defaultValue={endDate}
@@ -123,22 +123,23 @@ const CompetitionEntryScreen = ({navigation}) => {
 
         <Text style={styles.inputLabel}>Categories</Text>
         <TextInput 
-        style={styles.input} 
+        style={[styles.input, styles.inputGroupItem]} 
         keyboardType='default'
         placeholder='Runway' 
         defaultValue={tech}
         onChangeText={newValue => setTech(newValue)} />
 
         {/* image picker */}
-        <View style={styles.inputGroup}>
+        <View style={styles.pickerImage}>
+        <Text style={styles.pickerImage}>Feature One</Text>
             <TextInput
-            style={[styles.input, styles.inputGroup]}
-            placeholder="Feature One Title"
+            style={[styles.input, styles.inputGroupItem]}
+            placeholder="Title"
             onChangeText={newText => setFeatureOne(newText)}
             defaultValue={featureOne}
             returnKeyType="next"/>
 {imageOne ? (
-            <Pressable onPress={() => setImageOne(null)}>
+            <Pressable  onPress={() => setImageOne(null)}>
                 <Ionicons name="trash-outline" size={32} color="red"/>
             </Pressable>
             ):(
@@ -157,7 +158,7 @@ const CompetitionEntryScreen = ({navigation}) => {
 
     {!loading ?  (
         <TouchableOpacity style={styles.submitButton} onPress={createCompetition}>
-            <Text style={styles.submitButton}>Create Competition</Text>
+            <Text >Create Competition</Text>
         </TouchableOpacity>
 
 
@@ -174,17 +175,44 @@ const styles = StyleSheet.create({
     container: {
         padding: 20,
     },
-    inputGroup:{
-        alignSelf: 'center',
-        margin: 20,
+    inputLabel:{
+        color: "black",
+        marginLeft: 40,
+        marginTop: 40,
+
+    },
+
+    inputGroupItem:{
+        marginLeft: 40,
+        marginTop: 10,
+        width: 200,
+        height: 30,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: 'black',
+        borderRadius: 5,
+
+    },
+
+    input: {
+        fontSize: 10,
+        borderRadius: 20,
     },
     submitButton:{
-        marginTop: 10,
+        marginTop: -50,
+        marginLeft: 90,
+
         backgroundColor: 'pink',
-        width: 150,
-        height: 30,
+        width: 160,
+        height: 40,
+        padding: 10,
         borderRadius: 10,
     },
+    pickerImage:{
+        marginLeft: 50,
+        marginTop: 10,
+
+    }
 
 
 })

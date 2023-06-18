@@ -14,7 +14,6 @@ import ProfileTab from './navigators/ProfileTab';
 import CompetitionEntryScreen from './screens/CompetitionEntryScreen'
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { onAuthStateChanged } from 'firebase/auth';
 
@@ -55,7 +54,6 @@ export default function App() {
           ): (
           <>
           <Stack.Screen name='Home' component={HomeTab} />
-          <Stack.Screen name='Profile' component={ProfileTab} />
 
           <Stack.Screen name='Add' component={CompetitionEntryScreen} options={{headerShown: true, title: "Add a new Competition"}}/>
 
