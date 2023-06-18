@@ -118,14 +118,15 @@ Run the following in the command-line to install all the required dependencies:
 <!-- FEATURES AND FUNCTIONALITY-->
 <!-- You can add the links to all of your imagery at the bottom of the file as references -->
 ## Features and Functionality
-### Login / Sign Up
 
-Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts. 
+### Login Screen
 
-### Feature 2
-
-Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts.
+Authentication allows users who are already registered in the firebase database collection of 'users' to access their account. Passwords are encrypted as they sign up to the app which adds to the security of personal information. Only registered users are able to create, delete, or update any of thier information. 
 ![image3][image3]
+
+### Register Screen
+
+The regsiter screen is for new users who are able to create their profiles. As a user registers, their information gets added to the firebase database and is then a registered user.
 
 ![image4][image4]
 ### Feature 3
@@ -263,7 +264,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 [image1]: /path/to/image.png
 [image2]: /path/to/image.png
 [image3]: ./assets/login.jpg
-[image4]: /path/to/image.png
+[image4]: ./assets/register.jpg
 [image5]: /path/to/image.png
 [image6]: /path/to/image.png
 [image7]: /path/to/image.png
