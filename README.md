@@ -151,9 +151,20 @@ When a competition is available to the all the users in the database, it will be
 
 ### Add A New Competition
 
-Users are able to upload a new competition to the database collection where they will need to fill in the appropriate information which will then be available to all users to compete in.
+Users are able to upload a new competition to the database collection where they will need to fill in the appropriate information with the input fields, It will then be available to all users to compete in.
 
 ![image6][image6]
+
+### Deployment
+
+## Deployment
+
+The app is deployed using Expo.
+1. Install EAS CLI (npm install -g eas-cli) 
+2. Sign into your Expo account (eas login) and check if you are logged into your account (eas whoami)
+3. Configure the project (eas build:configure)
+4. Build the app. Android (eas build --platform android), IOS (eas build --platform ios), or both (eas build --platform all)
+
 
 <!-- CONCEPT PROCESS -->
 <!-- Briefly explain your concept ideation process -->
@@ -193,31 +204,19 @@ The `Development Process` is the technical implementations and functionality don
 
 #### Challenges
 <!-- stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved) -->
-* Bugs.
-* Bugs.
+* Encountered a lot of errors regarding the async functions. Most of them I was able to correct as I had forgotten to add an await to the async functions but currently there is still an error with the login screen. 
+* Installing any dependencies. It looks like I was not working in my main root and had to include 'sudo' before any installations which then allowed me to upload a new dependency. 
 
 ### Reviews & Testing
 <!-- stipulate how you've conducted testing in the form of peer reviews, feedback and also functionality testing, like unit tests (if applicable) -->
 
-#### Feedback from Reviews
-
-`Peer Reviews` were conducted by my fellow students and lecturer. The following feedback I found useful:
-
-* Feedback one.
-* Feedback two.
-
-#### Unit Tests
-
-`Unit Tests` were conducted to establish working functionality. Here are all the tests that were ran:
-
-* Test 1 of this functionality
-* Test 2 of this functionality
 
 ### Future Implementation
 <!-- stipulate functionality and improvements that can be implemented in the future. -->
 
-* Future 1.
-* Future 2.
+* Definitly improve my navigation functionality. When a user logs out of the app, it does not navigate back to the login and registration screen but in the console it does say 'Successfully Logged Out!".
+* Front End. I need to work on the design of the app as I was more focused on the functionality working.
+* Time management. As I encountered many bugs, I needed to start my functionality earlier to allow my app to work smoothly.
 
 <!-- MOCKUPS -->
 ## Final Outcome
@@ -254,7 +253,7 @@ Contributions are what makes the open-source community such an amazing place to 
 <!-- AUTHORS -->
 ## Authors
 
-* **Your Name & Surname** - [username](https://github.com/username)
+* **Anchen Ayres** - [username](https://github.com/anchenayres/termTwoProject_2023.git)
 
 <!-- LICENSE -->
 ## License
@@ -264,8 +263,8 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Your Name & Surname** - [email@address](mailto:email@address) - [@instagram_handle](https://www.instagram.com/instagram_handle/) 
-* **Project Link** - https://github.com/username/projectname
+* **Anchen Ayres** - [email@address](mailto:21100284@virtualwindow.co.za)
+* **Project Link** - https://github.com/anchenayres/termTwoProject_2023.git
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
