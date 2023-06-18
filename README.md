@@ -45,7 +45,7 @@ Table of Contents
   - [Installation](#installation)
 - [Features and Functionality](#features-and-functionality)
   - [Login / Sign Up](#login--sign-up)
-  - [Feature 2](#feature-2)
+  - [Competitions](#competitions)
   - [Feature 3](#feature-3)
 - [Concept Process](#concept-process)
   - [Ideation](#ideation)
@@ -123,7 +123,7 @@ Run the following in the command-line to install all the required dependencies:
 Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts. 
 
 
-![login][image3]
+![image3][image3]
 ### Feature 2
 
 Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts.
