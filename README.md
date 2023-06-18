@@ -122,10 +122,10 @@ Run the following in the command-line to install all the required dependencies:
 
 Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts. 
 
-<img src="./assets/login.jpg" alt="Logo" width="200" height="600" align-self="center">
 ### Feature 2
 
 Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts.
+![image3][image3]
 
 ![image4][image4]
 ### Feature 3
@@ -262,7 +262,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- MARKDOWN LINKS & IMAGES -->
 [image1]: /path/to/image.png
 [image2]: /path/to/image.png
-[image3]: /path/to/image.png
+[image3]: ./assets/login.jpg
 [image4]: /path/to/image.png
 [image5]: /path/to/image.png
 [image6]: /path/to/image.png
