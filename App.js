@@ -10,6 +10,7 @@ import ProfileScreen from './screens/ProfileScreen'
 import CompetitionScreen from './screens/CompetitionScreen';
 import ViewProfileScreen from './screens/ViewProfileScreen';
 import HomeTab from './navigators/HomeTab';
+import ProfileTab from './navigators/ProfileTab';
 import CompetitionEntryScreen from './screens/CompetitionEntryScreen'
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -49,10 +50,13 @@ export default function App() {
           <>
             <Stack.Screen name='Login' component={LoginScreen} />
             <Stack.Screen name='Register' component={RegisterSceen} />
+            
           </>
           ): (
           <>
           <Stack.Screen name='Home' component={HomeTab} />
+          <Stack.Screen name='Profile' component={ProfileTab} />
+
           <Stack.Screen name='Add' component={CompetitionEntryScreen} options={{headerShown: true, title: "Add a new Competition"}}/>
 
           <Stack.Screen 
@@ -62,6 +66,15 @@ export default function App() {
             headerShown: true,
             title: route.params.project.title
           })}/>
+
+          <Stack.Screen 
+          name='Profiles' 
+          component={ProfileTab} 
+          options={({route}) => ({
+            headerShown: true,
+            title: route.params.project.title
+          })}/>
+
           </>
           )}
         </Stack.Navigator>

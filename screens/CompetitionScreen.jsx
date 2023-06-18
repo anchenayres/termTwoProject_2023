@@ -83,5 +83,9 @@ const styles = StyleSheet.create({
     container: {
         padding: 20,
     },
+    addButton:{
+        margin: 20,
+        alignSelf: "center",
+    }
 
 })

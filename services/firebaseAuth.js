@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, getAuth, up
 import { Alert } from 'react-native';
 import { createUserInDb } from './firebaseDb';
 import { auth } from '../utils/firebase';
+// import {updateAuthProfile} 
 
 
 //Register User Functionality (REGISTER SCREEN) // change
@@ -59,8 +60,8 @@ export const signInUser = async (email, password) => {
 }
 
 //Sign Out Functionality
-export const signOutUser = () => {
-     signOutUser(auth)
+export const signOutUser = async () => {
+     await signOutUser(auth)
     .then(() => {
         console.log("Logged Out Successfully")
     }).catch((error) => {

@@ -3,11 +3,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import CompetitionScreen from '../screens/CompetitionScreen';
 import { Pressable } from 'react-native';
 import { StyleSheet } from 'react-native';
-import { signOutUser } from '../services/firebaseAuth';
 
 const Tab = createBottomTabNavigator();
 
-const HomeTab = () => {
+const ProfileTab = () => {
 return (
     <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -21,7 +20,7 @@ return (
             },
             tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
-                if (route.name === 'Competitions') {
+                if (route.name === 'Profiles') {
                     iconName = focused
                     ? 'list-circle'
                     : 'list-circle-outline';
@@ -37,10 +36,10 @@ return (
 
 
     <Tab.Screen
-        name='Competitions'
+        name='Profiles'
         component={CompetitionScreen}
         options={{
-            title: 'All Competitions',
+            title: 'All Profiles',
             headerRight: () => (
                 <Pressable
                     style={StyleSheet.logOutButton}
@@ -52,10 +51,11 @@ return (
                 </Pressable>
     )}}/>
 
- 
+
+    
         
     </Tab.Navigator>
 )
 }
 
-export default HomeTab
+export default ProfileTab

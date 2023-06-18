@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     description: {
-        color: 'red',
+        color: 'black',
         marginBottom: 10,
     },
     descr:{
