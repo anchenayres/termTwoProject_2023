@@ -124,7 +124,7 @@ Login / Sign Up Screen. This allows users to create an account with Model Search
 
 
 ![image3][image3]
-<img src="./assets/login.png" alt="Logo" width="200" height="200">
+<img src="./assets/login.jpg" alt="Logo" width="200" height="200">
 ### Feature 2
 
 Login / Sign Up Screen. This allows users to create an account with Model Search or log into their excisting accounts.
