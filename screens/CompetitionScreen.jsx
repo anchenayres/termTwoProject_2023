@@ -19,24 +19,32 @@ const CompetitionScreen = ({navigation}) => {
 
 
     //call from DB
-    // useFocusEffect (
-    //     useCallback(() => {
-    //         getAllCompetitions
-    //         return() => {
-    //             console.log("Home screen Not in View")
-    //         }
-    //     }, [])
-    // );
+//     useFocusEffect (
+//         useCallback(() => {
+//             getAllCompetitions
+//             return() => {
+//                 console.log("Home screen Not in View")
+//             }
+//         }, [])
+//     );
 
     useEffect( () => {
-        getAllCompetitions()
+       getAllCompetitions()
     }, [])
 
-    const getAllCompetitions = async () => {
-        console.log("Getting all the competitions...")
-        const allCompetitions = await getAllCompetitionsFromCollection()
+    const getAllCompetitions = async () =>{
+         console.log("Getting all the competitions...")
+         const allCompetitions = await getAllCompetitionsFromCollection()
         setCompetitions(allCompetitions)
-    }
+
+}
+
+
+    // const getAllCompetitions = async () => {
+    //     console.log("Getting all the competitions...")
+    //     const allCompetitions = await getAllCompetitionsFromCollection()
+    //     setCompetitions(allCompetitions)
+    // }
 
 
     //create new competition
@@ -51,12 +59,12 @@ const CompetitionScreen = ({navigation}) => {
       </TouchableOpacity>
 
       <ScrollView>
-        {competitions.map((competition, index) => ( //was project
+        {competitions.map((competitions, index) => ( //was project
             <TouchableOpacity
                 key={index}
-                onPress={() => navigation.push("Details", {competition})} //was project
+                onPress={() => navigation.push("Details", {competitions})} //was project
                 activeOpacity={0.75}>
-                <ProjectCard data={competition}/>
+                <ProjectCard data={competitions}/>
             </TouchableOpacity>
 
         ))}

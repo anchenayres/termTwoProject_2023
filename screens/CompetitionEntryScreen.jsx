@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import { StyleSheet, Text, TextInput, View, Image, Button, ActivityIndicator, TouchableOpacity, ScrollView, Pressable } from 'react-native';
 import { getCurrentUser } from "../services/firebaseAuth";
 import { addCompetitionCollection } from "../services/firebaseDb";
+import Ionicons from '@expo/vector-icons/Ionicons';
+import * as ImagePicker from 'expo-image-picker'
 
 // "add competition screen"
 const CompetitionEntryScreen = ({navigation}) => {
@@ -58,9 +60,21 @@ const CompetitionEntryScreen = ({navigation}) => {
         const [featureOne, setFeatureOne] = useState("")
         const [featureTwo, setFeatureTwo] = useState("")
 
-        const pickImageFromLibrary = () =>{
+        const pickImageFromLibrary = async (featureNumber) =>{
+            let result = await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.All,
+                allowsEditing: true,
+                aspect: [4, 3],
+                quality: 0.7,
+            });
 
-        }
+            if (!result.cancelled) {
+                if(featureNumber == 1) {
+                    setImageOne(result.assets[0].uri);
+                } else if (featureNumber == 2){
+                setImageOne(result.assets[0].uri);
+            }
+        }}
 
 
     return (
@@ -118,13 +132,13 @@ const CompetitionEntryScreen = ({navigation}) => {
         {/* image picker */}
         <View style={styles.inputGroup}>
             <TextInput
-            style={[styles.input, styles.inputGroupItem]}
+            style={[styles.input, styles.inputGroup]}
             placeholder="Feature One Title"
             onChangeText={newText => setFeatureOne(newText)}
             defaultValue={featureOne}
             returnKeyType="next"/>
 {imageOne ? (
-            <Pressable>
+            <Pressable onPress={() => setImageOne(null)}>
                 <Ionicons name="trash-outline" size={32} color="red"/>
             </Pressable>
             ):(
@@ -133,17 +147,17 @@ const CompetitionEntryScreen = ({navigation}) => {
                 <Ionicons name="images-outline" size={32} color="black"/>
                 </Pressable>
                 <Pressable onPress={() => takeImageFromCamera(1)}>
-                <Ionicons name="carmera-outline" size={34} color="black"/>
+                <Ionicons name="camera-outline" size={34} color="black"/>
                 </Pressable>
                 </>
             )}
         </View>
 
-        {imageOne && <Image source={{ uri: imageOne }} style={{width:200, height:200, marginTop:20}}/>
+        {imageOne && <Image source={{ uri: imageOne }} style={{width:200, height:200, marginTop:20}}/>}
 
     {!loading ?  (
         <TouchableOpacity style={styles.submitButton} onPress={createCompetition}>
-            <Text style={styles.submitButtonText}>Create Competition</Text>
+            <Text style={styles.submitButton}>Create Competition</Text>
         </TouchableOpacity>
 
 
@@ -151,6 +165,9 @@ const CompetitionEntryScreen = ({navigation}) => {
         </View>
     
     )}
+
+
+
 export default CompetitionEntryScreen
 
 const styles = StyleSheet.create({

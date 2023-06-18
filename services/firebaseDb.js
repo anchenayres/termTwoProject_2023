@@ -42,7 +42,7 @@ export const getAllCompetitionsFromCollection = async () =>{
     try {
         var competitions = []
 
-        const snapshot = await getDocs(collection(db, "competitions"))
+        const snapshot = await getDocs( (collection(db, "competitions")))
         snapshot.forEach((doc) => {
             console.log(doc.id, "=>", doc.data())
             competitions.push(doc.data())
